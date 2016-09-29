@@ -2,10 +2,10 @@
 
 // ACTION ITEM: replace mapbox access token below with your own mapbox access token. Refer to blank for information on accessing your token.
 L.mapbox.accessToken =
-	'pk.eyJ1IjoidnVsaWJyYXJ5Z2lzIiwiYSI6ImFaN2JkSlUifQ.Dl2sTO1mGKK7MCd1ViGPnQ';
+	'pk.eyJ1IjoicGFudGVycmEiLCJhIjoiUmxNT0tWcyJ9.ON6ip1H1CJs2jiPCydIDLw';
 
 // ACTION ITEM: Insert the Mapbox key for your landing page map, refer blank for information on locating the map key. Also change the set view for your region of the world
-var map = L.mapbox.map('map', "vulibrarygis.of23e6p0").setView([52.51, 13.38],
+var map = L.mapbox.map('map', "panterra.m5k337bh").setView([42.36, -71.04],
 	12);
 var layer = L.mapbox.featureLayer().addTo(map)
 
@@ -196,7 +196,7 @@ function processLayer(result) {
 // ACTION ITEM: The selection label must match your view in Cloudant	
 	if (selection_label == "1908") {
 // ACTION ITEM: Replace mapbox id below with the mapbox id that corresponds to your georeferenced map for the view above			
-		new_id = 'vulibrarygis.l74iic1a'
+		new_id = 'panterra.1f9689fj'
 	} 
 // ACTION ITEM: If you would like to incorporate multiple views into your mapping application, remove the double slashes in front of each trio of lines beginning with else if and ending with the end curly brace.	
 // ACTION ITEM: Each trio of lines from else if to the end curly brace is equivalent to one Cloudant view and map.
@@ -215,7 +215,7 @@ function processLayer(result) {
 	// } 
 // ACTION ITEM: Replace this mapbox id with the mapbox id for your landing page map.	
 	else {
-		new_id = 'vulibrarygis.of23e6p0'
+		new_id = 'panterra.m5k337bh'
 	};
 	var new_layer = L.mapbox.tileLayer(new_id);
 	new_layer.addTo(map);
