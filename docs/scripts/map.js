@@ -90,7 +90,7 @@ $(function() {
 	// list views from Cloudant that we want to offer as layers
 	var cloudantViews = [];
 // ACTION ITEM: Replace cloudant database URL with URL for your database 
-	$.getJSON('https://vulibrarygis.cloudant.com/map-berlin/_design/tour/',
+	$.getJSON('https://panterra.cloudant.com/mybostondb/_design/tour/',
 		function(result) {
 			var viewsList = result.views;
 			for (var v in viewsList) {
@@ -126,7 +126,7 @@ $("#search").submit(function(event) {
 function getLayer(callback, cloudantView) {
 // ACTION ITEM: Replace cloudant database URL with URL for your database 	
 	var cloudantURLbase =
-		"https://vulibrarygis.cloudant.com/map-berlin/_design/tour/_view/";
+		"https://panterra.cloudant.com/mybostondb/_design/tour/_view/";
 	var cloudantURLcallback = "?callback=?";
 	var thisCloudantURL = cloudantURLbase + cloudantView + cloudantURLcallback;
 	$.getJSON(thisCloudantURL, function(result) {
@@ -143,7 +143,7 @@ function getLayer(callback, cloudantView) {
 function searchPoints(callback, cloudantSearch) {
 // ACTION ITEM: Replace cloudant database URL with URL for your database 	
 	var cloudantURLbase =
-		"https://vulibrarygis.cloudant.com/map-berlin/_design/tour/_search/ids?q=";
+		"https://panterra.cloudant.com/mybostondb/_design/tour/_search/ids?q=";
 	var cloudantURLcallback = "&callback=?";
 	var thisCloudantURL = cloudantURLbase + cloudantSearch + cloudantURLcallback;
 	$.getJSON(thisCloudantURL, function(result) {
@@ -167,7 +167,7 @@ function getPoints(cloudantIDs) {
 
 	function getPoint(id) {
 // ACTION ITEM: Replace cloudant database URL with URL for your database 		
-		var cloudantURLbase = "https://vulibrarygis.cloudant.com/map-berlin/";
+		var cloudantURLbase = "https://panterra.cloudant.com/mybostondb/";
 		var url = cloudantURLbase + id;
 		return $.getJSON(url); // this returns a "promise"
 	}
@@ -194,7 +194,7 @@ function processLayer(result) {
 	// Add features to the map
 	var selection_label = $('#layers-dropdown option:selected').text();
 // ACTION ITEM: The selection label must match your view in Cloudant	
-	if (selection_label == "1891 Boston") {
+	if (selection_label == "boston1") {
 // ACTION ITEM: Replace mapbox id below with the mapbox id that corresponds to your georeferenced map for the view above			
 		new_id = 'panterra.1f9689fj'
 	} 
