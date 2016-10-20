@@ -126,7 +126,7 @@ $("#search").submit(function(event) {
 function getLayer(callback, cloudantView) {
 // ACTION ITEM: Replace cloudant database URL with URL for your database 	
 	var cloudantURLbase =
-		"https://panterra.cloudant.com/mybostondb/_design/tour/_view";
+		"https://panterra.cloudant.com/mybostondb/_design/tour/_view/";
 	var cloudantURLcallback = "?callback=?";
 	var thisCloudantURL = cloudantURLbase + cloudantView + cloudantURLcallback;
 	$.getJSON(thisCloudantURL, function(result) {
